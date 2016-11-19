@@ -19,7 +19,7 @@ discovery:
 #use sudo openssl passwd -1
 users:
 	- name: troocareroot
-	- passwd: $1$FzWkHjfK$CyLnG8fW3kxkplLy7Rer70    #<<provide password hash here
+	- passwd: $1$KyNNsG7t$1IhIJX9vDI6is9ALVLIcp/		#<<provide password hash here
 	groups:
 	- sudo
 	- docker
