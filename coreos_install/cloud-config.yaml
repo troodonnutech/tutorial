@@ -1,0 +1,28 @@
+
+#cloud-config
+#
+
+#Set hostname
+hostname: troocare.coreos.001
+
+#Set ssh keys
+#use ssh-keygen -t rsa -b 2048
+ssh_authorized_keys:
+
+coreos:
+etcd:
+
+#Generate a new token for the cluster from https://discovery.etcd.io/new
+discovery:
+
+#Create users and assign groups
+#use sudo openssl passwd -1
+users:
+	- name: troocareroot
+	- passwd: $1$lDjLv6u$xjog.p10Oe9ehp2RkB/7o    #<<provide password hash here
+	groups:
+	- sudo
+	- docker
+
+#disable ipv6 assigning by nic
+write_files:  - path: /etc/sysctl.d/10-disable-ipv6.conf    permissions: 0644    owner: root    content: |      net.ipv6.conf.eth0.disable_ipv6 = 1

@@ -1,0 +1,2 @@
+#get the file from this location
+https://raw.githubusercontent.com/coreos/init/master/bin/coreos-install
